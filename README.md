@@ -1,6 +1,11 @@
 # Hemanth Sridhar Nakshatri
 
-[Website](https://hemanth-nakshatri.github.io) &nbsp;&bull;&nbsp; [Resume (PDF)](https://hemanth-nakshatri.github.io/resume.pdf) &nbsp;&bull;&nbsp; [LinkedIn](https://linkedin.com/in/hemanth-nakshatri) &nbsp;&bull;&nbsp; [Email](mailto:hemans992@gmail.com)
+<p>
+  <a href="https://hemanth-nakshatri.github.io"><img src="assets/badges/badge-website.svg" alt="Website" height="24"></a>&nbsp;
+  <a href="https://linkedin.com/in/hemanth-nakshatri"><img src="assets/badges/badge-linkedin.svg" alt="LinkedIn" height="24"></a>&nbsp;
+  <a href="https://hemanth-nakshatri.github.io/resume.pdf"><img src="assets/badges/badge-resume.svg" alt="Resume PDF" height="24"></a>&nbsp;
+  <a href="mailto:hemans992@gmail.com"><img src="assets/badges/badge-email.svg" alt="Email" height="24"></a>
+</p>
 
 **Cloud Engineer II at Hewlett Packard Enterprise (HPE)** | Systems & Generative AI  
 Master of Science in Electrical & Computer Engineering (Machine Learning & Signal Processing), **University of Wisconsin&ndash;Madison**
