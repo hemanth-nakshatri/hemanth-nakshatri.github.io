@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hemanth Sridhar Nakshatri | Systems & Generative AI Engineer</title>
+  <meta name="description" content="Portfolio, research, and resume of Hemanth Sridhar Nakshatri — Cloud Engineer II at Hewlett Packard Enterprise (HPE). Specializing in Multi-Agent Systems, Observability, Model Context Protocol (MCP), and Machine Learning.">
+  <meta name="keywords" content="Hemanth Nakshatri, Hemanth Sridhar Nakshatri, Generative AI Engineer, Software Engineer, Machine Learning, Multi-Agent Systems, Model Context Protocol, MCP, HPE, OpsRamp, UW-Madison, IISc">
+  <meta name="author" content="Hemanth Sridhar Nakshatri">
+  <link rel="canonical" href="https://hemanth-nakshatri.github.io/">
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hemanth-nakshatri.github.io/">
+  <meta property="og:title" content="Hemanth Sridhar Nakshatri | Systems & Generative AI Engineer">
+  <meta property="og:description" content="Cloud Engineer II at HPE. Multi-Agent Systems, Model Context Protocol (MCP), Observability, and Machine Learning.">
+  <meta property="og:site_name" content="Hemanth Sridhar Nakshatri">
+
+  <!-- Schema.org Person JSON-LD for Google Rich Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Hemanth Sridhar Nakshatri",
+    "jobTitle": "Cloud Engineer II",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Hewlett Packard Enterprise"
+    },
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Wisconsin-Madison"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Dayananda Sagar College of Engineering"
+      }
+    ],
+    "url": "https://hemanth-nakshatri.github.io/",
+    "sameAs": [
+      "https://www.linkedin.com/in/hemanth-nakshatri/",
+      "https://github.com/hemanth-nakshatri",
+      "https://scholar.google.com"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card-bg: #f8fafc;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --tag-bg: #e0f2fe;
+      --tag-text: #0369a1;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0f19;
+        --card-bg: #131c2e;
+        --border: #1e293b;
+        --text: #f1f5f9;
+        --text-muted: #94a3b8;
+        --accent: #3b82f6;
+        --accent-hover: #60a5fa;
+        --tag-bg: #1e3a8a;
+        --tag-text: #bfdbfe;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 2.5rem 1.5rem;
+      max-width: 860px;
+      margin: 0 auto;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    header { margin-bottom: 2.5rem; }
+    .hero-title { font-size: 2.25rem; font-weight: 800; letter-spacing: -0.025em; line-height: 1.2; }
+    .hero-subtitle { font-size: 1.15rem; color: var(--text-muted); margin-top: 0.5rem; }
+    
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #ffffff;
+    }
+    .btn-primary:hover { background-color: var(--accent-hover); }
+
+    .btn-outline {
+      background-color: var(--card-bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    section { margin-top: 3rem; }
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .item {
+      margin-bottom: 1.75rem;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+    }
+    .item-title { font-size: 1.05rem; font-weight: 700; }
+    .item-company { font-weight: 600; color: var(--accent); }
+    .item-date { font-size: 0.88rem; color: var(--text-muted); }
+    .item-subtitle { font-size: 0.92rem; color: var(--text-muted); font-style: italic; margin-bottom: 0.4rem; }
+    
+    ul.item-bullets {
+      list-style-type: disc;
+      padding-left: 1.25rem;
+      margin-top: 0.5rem;
+    }
+    ul.item-bullets li {
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .badge-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+    .badge {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      background-color: var(--tag-bg);
+      color: var(--tag-text);
+    }
+
+    .pub-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .pub-title { font-weight: 700; font-size: 1rem; }
+    .pub-title a { color: inherit; text-decoration: none; }
+    .pub-title a:hover { color: var(--accent); text-decoration: underline; }
+    .pub-authors { font-size: 0.9rem; color: var(--text-muted); margin-top: 0.25rem; }
+    .pub-journal { font-size: 0.88rem; font-style: italic; margin-top: 0.25rem; }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="hero-title">Hemanth Sridhar Nakshatri</h1>
+    <p class="hero-subtitle">Cloud Engineer II @ Hewlett Packard Enterprise | Systems & Generative AI</p>
+    <div class="contact-links">
+      <a href="resume.pdf" class="btn btn-primary" target="_blank">📄 View Resume (PDF)</a>
+      <a href="https://github.com/hemanth-nakshatri" class="btn btn-outline" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/hemanth-nakshatri" class="btn btn-outline" target="_blank">LinkedIn</a>
+      <a href="mailto:hemans992@gmail.com" class="btn btn-outline">Email</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      I am a Systems and Generative AI Engineer at <strong>Hewlett Packard Enterprise (HPE)</strong>, architecting multi-agent systems and distributed intelligence platforms for enterprise observability and IT Operations Management (ITOM).
+    </p>
+    <p style="margin-top: 0.75rem;">
+      At HPE, I am the primary contributor to our <strong>Agentic Observability Harness</strong> (comparable in scope to AWS DevOps Agent) — an enterprise platform orchestrating 600+ tools via the Model Context Protocol (MCP) to automate Root Cause Analysis (RCA) and incident remediation across hundreds of enterprise tenants.
+    </p>
+    <p style="margin-top: 0.75rem;">
+      I hold a Master of Science in Electrical and Computer Engineering (focused on Machine Learning and Signal Processing) from the <strong>University of Wisconsin–Madison</strong>. Prior to HPE, I conducted computational medical imaging research at the <strong>Indian Institute of Science (IISc)</strong>, developing novel complex-valued neural network architectures resulting in two first-author publications in <em>IEEE Transactions on Computational Imaging</em> and <em>The Journal of the Acoustical Society of America</em>.
+    </p>
+  </section>
+
+  <section id="experience">
+    <h2>Work Experience</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Cloud Engineer II <span class="item-company">@ Hewlett Packard Enterprise</span></span>
+        <span class="item-date">Feb 2025 – Present</span>
+      </div>
+      <div class="item-subtitle">Promoted Dec 2025 from Software Engineer (Systems) · San Jose, CA</div>
+      <ul class="item-bullets">
+        <li><strong>Multi-Agent AI Harness:</strong> Architected an enterprise multi-agent system for automated Root Cause Analysis (RCA) on HPE's observability platform (OpsRamp), orchestrating specialized agents across alerts, traces, logs, and topology for ITOM across hundreds of enterprise tenants.</li>
+        <li><strong>600+ Tool Orchestration:</strong> Engineered a dynamic tool selection and context-aware routing layer, preventing context bloat while maintaining full platform coverage — backed by a distributed streaming architecture using <strong>Kafka, Redis, Cassandra, and Elasticsearch</strong>.</li>
+        <li><strong>MCP & Extensibility:</strong> Designed an extensible, Model Context Protocol (MCP) compatible plugin framework (Bring Your Own Skills, Rules, and Evidence), enabling tenants to integrate external telemetry sources, custom diagnostic policies, and third-party tools.</li>
+        <li><strong>Continuous Learning Engine:</strong> Built an adaptive memory layer that retains past investigation outcomes, learns from human corrective feedback, and adapts to user preferences to iteratively improve diagnosis accuracy.</li>
+        <li><strong>Platform Control & Automation:</strong> Developed agentic platform control and automated resource onboarding, converting multi-hour manual configuration workflows into minutes.</li>
+        <li><strong>Business Impact:</strong> Slashed false-positive escalation to on-call engineers by over <strong>80%</strong>, enabling L1 support to autonomously triage incidents and accelerating Mean Time to Diagnosis (MTTD) to under <strong>10 minutes</strong>.</li>
+      </ul>
+      <div class="badge-container">
+        <span class="badge">Multi-Agent Systems</span>
+        <span class="badge">Model Context Protocol (MCP)</span>
+        <span class="badge">Kafka</span>
+        <span class="badge">Redis</span>
+        <span class="badge">Cassandra</span>
+        <span class="badge">Elasticsearch</span>
+        <span class="badge">AIOps</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Software Engineer Intern <span class="item-company">@ Hewlett Packard Enterprise</span></span>
+        <span class="item-date">Jun 2024 – Aug 2024</span>
+      </div>
+      <div class="item-subtitle">San Jose, CA</div>
+      <ul class="item-bullets">
+        <li>Built an end-to-end RAG virtual assistant utilizing dynamic context distillation inspired by Map-Reduce, enabling LLMs to accurately synthesize 100k+ word knowledge bases.</li>
+        <li>Designed a scalable architectural pipeline for time-series forecasting, capable of ingesting and modeling diverse univariate and multivariate incoming telemetry streams.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Project Associate <span class="item-company">@ Indian Institute of Science (IISc)</span></span>
+        <span class="item-date">Aug 2021 – Jul 2023</span>
+      </div>
+      <div class="item-subtitle">Supervised by Prof. Jaya Prakash · Bangalore, India</div>
+      <ul class="item-bullets">
+        <li>Formulated model resolution matrix-based deconvolution algorithms for computational medical imaging, boosting reconstruction quality in photoacoustic tomography by over <strong>20% in PSNR</strong> and <strong>30% in SSIM</strong>.</li>
+        <li>Developed a novel complex-valued LSTM neural network architecture for frequency-domain imaging, outperforming baseline methods by <strong>15% in PSNR</strong>, <strong>10% in SSIM</strong>, with a <strong>75-fold speedup</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="patents-publications">
+    <h2>Patents & Publications</h2>
+
+    <div class="pub-card">
+      <div class="pub-title">Synchronized Context Management System for AI in IT Operations Management Applications</div>
+      <div class="pub-authors"><strong>Nakshatri, Hemanth S.</strong>, et al.</div>
+      <div class="pub-journal"><strong>U.S. Patent Pending (2025)</strong></div>
+      <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.35rem;">
+        Novel architecture for real-time synchronized context propagation across multi-agent AI networks and heterogeneous observability data domains in IT operations and service management.
+      </p>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-title">
+        <a href="https://ieeexplore.ieee.org/abstract/document/10143260" target="_blank">
+          Complex Valued Long Short Term Memory Based Architecture for Frequency Domain Photoacoustic Imaging ↗
+        </a>
+      </div>
+      <div class="pub-authors"><strong>Nakshatri, Hemanth S.</strong>, Jaya Prakash</div>
+      <div class="pub-journal">IEEE Transactions on Computational Imaging (2023)</div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-title">
+        <a href="https://pubs.aip.org/asa/jasa/article-abstract/152/3/1345/2838702" target="_blank">
+          Model resolution matrix based deconvolution improves over non-quadratic penalization in frequency-domain photoacoustic tomography ↗
+        </a>
+      </div>
+      <div class="pub-authors"><strong>Nakshatri, Hemanth S.</strong>, Jaya Prakash</div>
+      <div class="pub-journal">The Journal of the Acoustical Society of America (2022)</div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">University of Wisconsin — Madison</span>
+        <span class="item-date">Sep 2023 – Dec 2024</span>
+      </div>
+      <div class="item-subtitle">Master of Science in Electrical and Computer Engineering (Machine Learning & Signal Processing)</div>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">
+        <strong>Coursework:</strong> Machine Learning (760), Big Data Systems (544), High-Performance Computing (759), Computer Vision (766), Computer Architecture (552), Image Processing (533).
+      </p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Dayananda Sagar College of Engineering</span>
+        <span class="item-date">Aug 2017 – May 2021</span>
+      </div>
+      <div class="item-subtitle">Bachelor of Engineering in Electronics and Communication Engineering</div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <p style="margin-bottom: 0.5rem;"><strong>Programming:</strong> Python, Java, C, C++, Verilog, MATLAB, SQL</p>
+    <p style="margin-bottom: 0.5rem;"><strong>Generative AI & Agents:</strong> Multi-Agent Systems, Model Context Protocol (MCP), A2A, LangChain, LangGraph, Google ADK, RAG, Prompt Engineering</p>
+    <p style="margin-bottom: 0.5rem;"><strong>ML & Signal Processing:</strong> PyTorch, TensorFlow, Scikit-learn, CUDA, Computer Vision, Signal Processing, Time-Series Forecasting</p>
+    <p style="margin-bottom: 0.5rem;"><strong>Systems & Cloud:</strong> Kafka, Redis, Cassandra, Elasticsearch, Docker, Kubernetes, Spark, Spring, J2EE, Linux</p>
+  </section>
+
+  <footer>
+    <p>© 2026 Hemanth Sridhar Nakshatri · Hosted with GitHub Pages</p>
+  </footer>
+
+</body>
+</html>
