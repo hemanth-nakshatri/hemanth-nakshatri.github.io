@@ -27,8 +27,9 @@ Master of Science in Electrical & Computer Engineering (Machine Learning & Signa
 
 ### 📜 Patents & Selected Publications
 1. **U.S. Patent Pending (2025):** *Synchronized Context Management System for AI in IT Operations Management Applications*
-2. **IEEE Transactions on Computational Imaging (2023):** [*Complex Valued Long Short Term Memory Based Architecture for Frequency Domain Photoacoustic Imaging*](https://ieeexplore.ieee.org/abstract/document/10143260)
-3. **The Journal of the Acoustical Society of America (2022):** [*Model resolution matrix based deconvolution improves over non-quadratic penalization in frequency-domain photoacoustic tomography*](https://pubs.aip.org/asa/jasa/article-abstract/152/3/1345/2838702)
+2. **Journal of Instrumentation (2025):** [*Low dose computed tomographic image reconstruction with advanced multi-encoder architecture*](https://iopscience.iop.org/article/10.1088/1748-0221/20/12/P12004)
+3. **IEEE Transactions on Computational Imaging (2023):** [*Complex Valued Long Short Term Memory Based Architecture for Frequency Domain Photoacoustic Imaging*](https://ieeexplore.ieee.org/abstract/document/10143260)
+4. **The Journal of the Acoustical Society of America (2022):** [*Model resolution matrix based deconvolution improves over non-quadratic penalization in frequency-domain photoacoustic tomography*](https://pubs.aip.org/asa/jasa/article-abstract/152/3/1345/2838702)
 
 ---
 

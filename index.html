@@ -18,7 +18,7 @@
   <meta property="og:site_name" content="Hemanth Sridhar Nakshatri">
   <meta property="og:url" content="https://hemanth-nakshatri.github.io/">
   <meta property="og:title" content="Hemanth Sridhar Nakshatri — Cloud Engineer @ HPE">
-  <meta property="og:description" content="Systems & Applied ML Engineer at Hewlett Packard Enterprise. M.S. ECE from UW–Madison. Research publications in IEEE TCI and JASA.">
+  <meta property="og:description" content="Systems & Applied ML Engineer at Hewlett Packard Enterprise. M.S. ECE from UW–Madison. Research publications in JINST, IEEE TCI, and JASA.">
   <meta property="og:image" content="https://hemanth-nakshatri.github.io/assets/og-card.jpg">
   <meta property="og:image:secure_url" content="https://hemanth-nakshatri.github.io/assets/og-card.jpg">
   <meta property="og:image:type" content="image/jpeg">
@@ -29,7 +29,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Hemanth Sridhar Nakshatri — Cloud Engineer @ HPE">
-  <meta name="twitter:description" content="Systems & Applied ML Engineer at Hewlett Packard Enterprise. M.S. ECE from UW–Madison. Research publications in IEEE TCI and JASA.">
+  <meta name="twitter:description" content="Systems & Applied ML Engineer at Hewlett Packard Enterprise. M.S. ECE from UW–Madison. Research publications in JINST, IEEE TCI, and JASA.">
   <meta name="twitter:image" content="https://hemanth-nakshatri.github.io/assets/og-card.jpg">
 
   <!-- Schema.org Person JSON-LD -->
@@ -1236,6 +1236,28 @@
           </p>
         </article>
 
+        <!-- JINST Paper -->
+        <article class="pub-entry">
+          <div class="pub-badge-row">
+            <span class="pub-type-label">Peer-Reviewed Journal</span>
+            <span class="pub-year">JINST · 2025</span>
+          </div>
+          <h3 class="pub-title-line">
+            <a href="https://iopscience.iop.org/article/10.1088/1748-0221/20/12/P12004" target="_blank" rel="noopener">
+              Low dose computed tomographic image reconstruction with advanced multi-encoder architecture ↗
+            </a>
+          </h3>
+          <div class="pub-authors">Isha Munjal, <strong>Nakshatri, Hemanth S.</strong>, Jaya Prakash</div>
+          <div class="pub-venue-line">Journal of Instrumentation, Vol. 20, P12004, Dec 2025 · IOP Publishing</div>
+          <p class="pub-summary">
+            Introduces an advanced multi-encoder deep neural network architecture designed for low-dose computed tomography (CT) reconstruction, substantially mitigating radiation noise artifacts while preserving structural diagnostic detail.
+          </p>
+          <div class="pub-actions">
+            <a href="https://iopscience.iop.org/article/10.1088/1748-0221/20/12/P12004" target="_blank" rel="noopener">IOPscience ↗</a>
+            <button class="btn-copy-citation" onclick="copyCitation('jinst')">Copy BibTeX Citation</button>
+          </div>
+        </article>
+
         <!-- IEEE TCI Paper -->
         <article class="pub-entry">
           <div class="pub-badge-row">
@@ -1409,6 +1431,7 @@
 
     // Peer-Reviewed Paper BibTeX Citations
     const citations = {
+      jinst: `@article{munjal2025low,\n  author = {Munjal, Isha and Nakshatri, Hemanth and Prakash, Jaya},\n  title = {Low dose computed tomographic image reconstruction with advanced multi-encoder architecture},\n  journal = {Journal of Instrumentation},\n  volume = {20},\n  number = {12},\n  pages = {P12004},\n  year = {2025},\n  publisher = {IOP Publishing},\n  doi = {10.1088/1748-0221/20/12/P12004}\n}`,
       ieee: `@article{nakshatri2023complex,\n  author = {Nakshatri, Hemanth S. and Prakash, Jaya},\n  title = {Complex Valued Long Short Term Memory Based Architecture for Frequency Domain Photoacoustic Imaging},\n  journal = {IEEE Transactions on Computational Imaging},\n  volume = {9},\n  year = {2023},\n  publisher = {IEEE}\n}`,
       jasa: `@article{nakshatri2022model,\n  author = {Nakshatri, Hemanth S. and Prakash, Jaya},\n  title = {Model resolution matrix based deconvolution improves over non-quadratic penalization in frequency-domain photoacoustic tomography},\n  journal = {The Journal of the Acoustical Society of America},\n  volume = {152},\n  number = {3},\n  pages = {1345--1356},\n  year = {2022},\n  publisher = {AIP Publishing}\n}`
     };
