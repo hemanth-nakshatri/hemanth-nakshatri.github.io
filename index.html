@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
   <title>Hemanth Sridhar Nakshatri | Systems & Generative AI Engineer</title>
-  <meta name="description" content="Portfolio, research, and resume of Hemanth Sridhar Nakshatri — Cloud Engineer II at Hewlett Packard Enterprise (HPE). Specializing in Multi-Agent Systems, Observability, Model Context Protocol (MCP), and Machine Learning.">
-  <meta name="keywords" content="Hemanth Nakshatri, Hemanth Sridhar Nakshatri, Generative AI Engineer, Software Engineer, Machine Learning, Multi-Agent Systems, Model Context Protocol, MCP, HPE, OpsRamp, UW-Madison, IISc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal website and research of Hemanth Sridhar Nakshatri — Cloud Engineer II at Hewlett Packard Enterprise (HPE). Focus on Multi-Agent Systems, Model Context Protocol (MCP), Distributed Systems, and Machine Learning.">
+  <meta name="keywords" content="Hemanth Nakshatri, Hemanth Sridhar Nakshatri, Generative AI, Multi-Agent Systems, MCP, Cloud Engineer, Software Engineer, Observability, HPE, UW-Madison, IISc">
   <meta name="author" content="Hemanth Sridhar Nakshatri">
   <link rel="canonical" href="https://hemanth-nakshatri.github.io/">
 
-  <!-- Open Graph / Social Meta -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://hemanth-nakshatri.github.io/">
   <meta property="og:title" content="Hemanth Sridhar Nakshatri | Systems & Generative AI Engineer">
-  <meta property="og:description" content="Cloud Engineer II at HPE. Multi-Agent Systems, Model Context Protocol (MCP), Observability, and Machine Learning.">
+  <meta property="og:description" content="Cloud Engineer II @ HPE. Multi-Agent Systems, Model Context Protocol (MCP), Distributed Telemetry, and Machine Learning.">
   <meta property="og:site_name" content="Hemanth Sridhar Nakshatri">
 
-  <!-- Schema.org Person JSON-LD for Google Rich Results -->
+  <!-- Schema.org Person JSON-LD for Google & Bing Indexing -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -40,310 +40,1022 @@
     "url": "https://hemanth-nakshatri.github.io/",
     "sameAs": [
       "https://www.linkedin.com/in/hemanth-nakshatri/",
-      "https://github.com/hemanth-nakshatri",
-      "https://scholar.google.com"
+      "https://github.com/hemanth-nakshatri"
     ]
   }
   </script>
 
   <style>
     :root {
-      --bg: #ffffff;
-      --card-bg: #f8fafc;
-      --border: #e2e8f0;
-      --text: #0f172a;
-      --text-muted: #475569;
-      --accent: #2563eb;
-      --accent-hover: #1d4ed8;
-      --tag-bg: #e0f2fe;
-      --tag-text: #0369a1;
-      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --bg: #090d16;
+      --bg-surface: #111726;
+      --bg-card: #151d30;
+      --bg-card-hover: #1b253d;
+      --border: #232f48;
+      --border-accent: rgba(56, 189, 248, 0.3);
+      --accent: #38bdf8;
+      --accent-deep: #0369a1;
+      --success: #34d399;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #94a3b8;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      --container: 960px;
     }
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0b0f19;
-        --card-bg: #131c2e;
-        --border: #1e293b;
-        --text: #f1f5f9;
-        --text-muted: #94a3b8;
-        --accent: #3b82f6;
-        --accent-hover: #60a5fa;
-        --tag-bg: #1e3a8a;
-        --tag-text: #bfdbfe;
-      }
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
     body {
       font-family: var(--font);
       background-color: var(--bg);
       color: var(--text);
-      line-height: 1.65;
-      padding: 2.5rem 1.5rem;
-      max-width: 860px;
-      margin: 0 auto;
-      transition: background-color 0.2s, color 0.2s;
+      line-height: 1.68;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
-    header { margin-bottom: 2.5rem; }
-    .hero-title { font-size: 2.25rem; font-weight: 800; letter-spacing: -0.025em; line-height: 1.2; }
-    .hero-subtitle { font-size: 1.15rem; color: var(--text-muted); margin-top: 0.5rem; }
-    
-    .contact-links {
+    ::selection { background: var(--accent); color: #000000; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+    /* Layout utilities */
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 1.5rem; }
+    .section-wrap { padding: 5.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+
+    /* Navigation */
+    #nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(9, 13, 22, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 68px;
+    }
+
+    .nav-brand {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav-brand span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+    .nav-links a:hover { color: #ffffff; }
+
+    .btn-nav-resume {
+      background: var(--accent-deep);
+      color: #ffffff !important;
+      padding: 0.45rem 1rem;
+      border-radius: 6px;
+      font-weight: 700 !important;
+      font-size: 0.85rem !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: background 0.15s ease;
+    }
+    .btn-nav-resume:hover {
+      background: var(--accent);
+      color: #000000 !important;
+    }
+
+    .mobile-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    #hero {
+      padding: 8.5rem 0 4.5rem 0;
+      background: radial-gradient(ellipse 90% 60% at 50% -10%, rgba(2, 132, 199, 0.14) 0%, transparent 75%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid var(--border-accent);
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--success);
+      border-radius: 50%;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5.5vw, 4rem);
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      line-height: 1.3;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-lead {
+      font-size: clamp(1.1rem, 2vw, 1.25rem);
+      color: var(--text-muted);
+      max-width: 70ch;
+      line-height: 1.65;
+      margin-bottom: 2.25rem;
+    }
+    .hero-lead strong { color: #ffffff; font-weight: 600; }
+
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1.25rem;
+      gap: 1rem;
+      align-items: center;
     }
 
+    /* Action Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      padding: 0.5rem 1rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-      border-radius: 6px;
+      gap: 0.55rem;
+      padding: 0.8rem 1.6rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: 8px;
       text-decoration: none;
-      transition: all 0.15s ease;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
     }
 
     .btn-primary {
-      background-color: var(--accent);
-      color: #ffffff;
+      background: var(--accent);
+      color: #040810;
     }
-    .btn-primary:hover { background-color: var(--accent-hover); }
+    .btn-primary:hover {
+      background: #7dd3fc;
+    }
 
-    .btn-outline {
-      background-color: var(--card-bg);
+    .btn-secondary {
+      background: var(--bg-card);
       color: var(--text);
       border: 1px solid var(--border);
     }
-    .btn-outline:hover {
+    .btn-secondary:hover {
       border-color: var(--accent);
       color: var(--accent);
     }
 
-    section { margin-top: 3rem; }
-    h2 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.25rem;
-      letter-spacing: -0.01em;
+    .hero-socials {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
     }
 
-    .item {
-      margin-bottom: 1.75rem;
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: border-color 0.15s ease, color 0.15s ease;
     }
-    .item-header {
+    .social-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Section Headings */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.35;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      max-width: 68ch;
+      margin-bottom: 3rem;
+    }
+
+    /* Timeline Layout for Experience */
+    .timeline {
+      position: relative;
+      border-left: 2px solid var(--border);
+      margin-left: 0.5rem;
+      padding-left: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3.25rem;
+    }
+
+    .timeline-item {
+      position: relative;
+    }
+
+    .timeline-node {
+      position: absolute;
+      left: -2.625rem;
+      top: 0.35rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg);
+    }
+
+    .timeline-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       flex-wrap: wrap;
-      gap: 0.25rem;
-    }
-    .item-title { font-size: 1.05rem; font-weight: 700; }
-    .item-company { font-weight: 600; color: var(--accent); }
-    .item-date { font-size: 0.88rem; color: var(--text-muted); }
-    .item-subtitle { font-size: 0.92rem; color: var(--text-muted); font-style: italic; margin-bottom: 0.4rem; }
-    
-    ul.item-bullets {
-      list-style-type: disc;
-      padding-left: 1.25rem;
-      margin-top: 0.5rem;
-    }
-    ul.item-bullets li {
+      gap: 0.5rem;
       margin-bottom: 0.4rem;
-      font-size: 0.95rem;
-      color: var(--text);
     }
 
-    .badge-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.5rem;
-    }
-    .badge {
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 0.2rem 0.55rem;
-      border-radius: 4px;
-      background-color: var(--tag-bg);
-      color: var(--tag-text);
+    .timeline-role {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.35;
     }
 
-    .pub-card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.1rem;
-      margin-bottom: 1rem;
-    }
-    .pub-title { font-weight: 700; font-size: 1rem; }
-    .pub-title a { color: inherit; text-decoration: none; }
-    .pub-title a:hover { color: var(--accent); text-decoration: underline; }
-    .pub-authors { font-size: 0.9rem; color: var(--text-muted); margin-top: 0.25rem; }
-    .pub-journal { font-size: 0.88rem; font-style: italic; margin-top: 0.25rem; }
-
-    footer {
-      margin-top: 4rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
+    .timeline-date {
+      font-family: var(--font-mono);
       font-size: 0.85rem;
       color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+    }
+
+    .timeline-org {
+      font-size: 1.02rem;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .promo-pill {
+      display: inline-block;
+      margin-left: 0.6rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+      vertical-align: middle;
+    }
+
+    .timeline-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .timeline-list li {
+      position: relative;
+      padding-left: 1.35rem;
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .timeline-list li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .timeline-list li strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+    }
+
+    /* Publications & Patents */
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .pub-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem;
+      transition: border-color 0.15s ease;
+    }
+    .pub-item:hover {
+      border-color: var(--border-accent);
+    }
+
+    .pub-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+    }
+    .badge-patent { background: rgba(56, 189, 248, 0.12); color: var(--accent); }
+    .badge-journal { background: rgba(16, 185, 129, 0.12); color: #34d399; }
+
+    .pub-heading {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+    .pub-heading a { color: inherit; text-decoration: none; }
+    .pub-heading a:hover { color: var(--accent); }
+
+    .pub-meta {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+    .pub-meta strong { color: #ffffff; }
+    .pub-venue { color: var(--accent); font-weight: 600; }
+
+    .pub-summary {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+
+    .pub-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid var(--border-accent);
+      padding: 0.35rem 0.8rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .pub-link-btn:hover {
+      background: var(--accent);
+      color: #000000;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+
+    .skill-card h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .skill-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .skill-items li {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .skill-items li::before {
+      content: '•';
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    /* Education Cards */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .edu-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem;
+    }
+
+    .edu-item h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.3rem;
+    }
+
+    .edu-inst {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.98rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .edu-date {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .edu-item p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Dedicated Resume Section */
+    #resume-direct {
+      background: var(--bg-surface);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 3.5rem 2rem;
       text-align: center;
+      margin: 4.5rem 0;
+    }
+
+    .resume-direct-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .resume-direct-desc {
+      color: var(--text-muted);
+      max-width: 58ch;
+      margin: 0 auto 1.75rem auto;
+      font-size: 1.02rem;
+      line-height: 1.6;
+    }
+
+    .resume-link-code {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 1.25rem;
+    }
+    .resume-link-code code {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.55rem;
+      border-radius: 4px;
+      color: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      padding: 4rem 0 3rem 0;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background: #060910;
+    }
+
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-copy {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-btn { display: block; }
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        background: #0c121e;
+        padding: 1.75rem;
+        gap: 1.25rem;
+        border-bottom: 1px solid var(--border);
+      }
+      .timeline { padding-left: 1.5rem; margin-left: 0.25rem; }
+      .timeline-node { left: -2.125rem; }
+      .section-wrap { padding: 4rem 0; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1 class="hero-title">Hemanth Sridhar Nakshatri</h1>
-    <p class="hero-subtitle">Cloud Engineer II @ Hewlett Packard Enterprise | Systems & Generative AI</p>
-    <div class="contact-links">
-      <a href="resume.pdf" class="btn btn-primary" target="_blank">📄 View Resume (PDF)</a>
-      <a href="https://github.com/hemanth-nakshatri" class="btn btn-outline" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/hemanth-nakshatri" class="btn btn-outline" target="_blank">LinkedIn</a>
-      <a href="mailto:hemans992@gmail.com" class="btn btn-outline">Email</a>
+  <!-- Top Navigation -->
+  <nav id="nav">
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-brand">Hemanth <span>Nakshatri</span></a>
+      <button class="mobile-btn" id="mobileToggle" aria-label="Toggle Navigation">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <!-- Permanent self-hosted resume link in header -->
+        <li>
+          <a href="resume.pdf" class="btn-nav-resume" target="_blank" download>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Resume (PDF)
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <header id="hero">
+    <div class="container">
+      <div class="hero-status">
+        <span class="status-dot"></span>
+        Systems & Generative AI · Cloud Engineer II @ HPE
+      </div>
+      <h1 class="hero-title">Hemanth Sridhar Nakshatri</h1>
+      <p class="hero-lead">
+        Building <strong>autonomous multi-agent harnesses</strong> and <strong>high-throughput distributed telemetry infrastructure</strong>. Lead contributor to Hewlett Packard Enterprise's Agentic Observability Harness using <strong>Model Context Protocol (MCP)</strong> and <strong>Apache Kafka</strong>.
+      </p>
+
+      <div class="hero-actions">
+        <!-- Self-hosted resume download -->
+        <a href="resume.pdf" class="btn btn-primary" target="_blank" download>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download Resume (PDF)
+        </a>
+        <a href="#experience" class="btn btn-secondary">View Experience</a>
+        <div class="hero-socials">
+          <a href="https://github.com/hemanth-nakshatri" class="social-btn" target="_blank" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/hemanth-nakshatri" class="social-btn" target="_blank" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="mailto:hemans992@gmail.com" class="social-btn" aria-label="Email">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <section id="about">
-    <h2>About</h2>
-    <p>
-      I am a Systems and Generative AI Engineer at <strong>Hewlett Packard Enterprise (HPE)</strong>, architecting multi-agent systems and distributed intelligence platforms for enterprise observability and IT Operations Management (ITOM).
-    </p>
-    <p style="margin-top: 0.75rem;">
-      At HPE, I am the primary contributor to our <strong>Agentic Observability Harness</strong> (comparable in scope to AWS DevOps Agent) — an enterprise platform orchestrating 600+ tools via the Model Context Protocol (MCP) to automate Root Cause Analysis (RCA) and incident remediation across hundreds of enterprise tenants.
-    </p>
-    <p style="margin-top: 0.75rem;">
-      I hold a Master of Science in Electrical and Computer Engineering (focused on Machine Learning and Signal Processing) from the <strong>University of Wisconsin–Madison</strong>. Prior to HPE, I conducted computational medical imaging research at the <strong>Indian Institute of Science (IISc)</strong>, developing novel complex-valued neural network architectures resulting in two first-author publications in <em>IEEE Transactions on Computational Imaging</em> and <em>The Journal of the Acoustical Society of America</em>.
-    </p>
-  </section>
-
-  <section id="experience">
-    <h2>Work Experience</h2>
-
-    <div class="item">
-      <div class="item-header">
-        <span class="item-title">Cloud Engineer II <span class="item-company">@ Hewlett Packard Enterprise</span></span>
-        <span class="item-date">Feb 2025 – Present</span>
-      </div>
-      <div class="item-subtitle">Promoted Dec 2025 from Software Engineer (Systems) · San Jose, CA</div>
-      <ul class="item-bullets">
-        <li><strong>Multi-Agent AI Harness:</strong> Architected an enterprise multi-agent system for automated Root Cause Analysis (RCA) on HPE's observability platform (OpsRamp), orchestrating specialized agents across alerts, traces, logs, and topology for ITOM across hundreds of enterprise tenants.</li>
-        <li><strong>600+ Tool Orchestration:</strong> Engineered a dynamic tool selection and context-aware routing layer, preventing context bloat while maintaining full platform coverage — backed by a distributed streaming architecture using <strong>Kafka, Redis, Cassandra, and Elasticsearch</strong>.</li>
-        <li><strong>MCP & Extensibility:</strong> Designed an extensible, Model Context Protocol (MCP) compatible plugin framework (Bring Your Own Skills, Rules, and Evidence), enabling tenants to integrate external telemetry sources, custom diagnostic policies, and third-party tools.</li>
-        <li><strong>Continuous Learning Engine:</strong> Built an adaptive memory layer that retains past investigation outcomes, learns from human corrective feedback, and adapts to user preferences to iteratively improve diagnosis accuracy.</li>
-        <li><strong>Platform Control & Automation:</strong> Developed agentic platform control and automated resource onboarding, converting multi-hour manual configuration workflows into minutes.</li>
-        <li><strong>Business Impact:</strong> Slashed false-positive escalation to on-call engineers by over <strong>80%</strong>, enabling L1 support to autonomously triage incidents and accelerating Mean Time to Diagnosis (MTTD) to under <strong>10 minutes</strong>.</li>
-      </ul>
-      <div class="badge-container">
-        <span class="badge">Multi-Agent Systems</span>
-        <span class="badge">Model Context Protocol (MCP)</span>
-        <span class="badge">Kafka</span>
-        <span class="badge">Redis</span>
-        <span class="badge">Cassandra</span>
-        <span class="badge">Elasticsearch</span>
-        <span class="badge">AIOps</span>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="item-header">
-        <span class="item-title">Software Engineer Intern <span class="item-company">@ Hewlett Packard Enterprise</span></span>
-        <span class="item-date">Jun 2024 – Aug 2024</span>
-      </div>
-      <div class="item-subtitle">San Jose, CA</div>
-      <ul class="item-bullets">
-        <li>Built an end-to-end RAG virtual assistant utilizing dynamic context distillation inspired by Map-Reduce, enabling LLMs to accurately synthesize 100k+ word knowledge bases.</li>
-        <li>Designed a scalable architectural pipeline for time-series forecasting, capable of ingesting and modeling diverse univariate and multivariate incoming telemetry streams.</li>
-      </ul>
-    </div>
-
-    <div class="item">
-      <div class="item-header">
-        <span class="item-title">Project Associate <span class="item-company">@ Indian Institute of Science (IISc)</span></span>
-        <span class="item-date">Aug 2021 – Jul 2023</span>
-      </div>
-      <div class="item-subtitle">Supervised by Prof. Jaya Prakash · Bangalore, India</div>
-      <ul class="item-bullets">
-        <li>Formulated model resolution matrix-based deconvolution algorithms for computational medical imaging, boosting reconstruction quality in photoacoustic tomography by over <strong>20% in PSNR</strong> and <strong>30% in SSIM</strong>.</li>
-        <li>Developed a novel complex-valued LSTM neural network architecture for frequency-domain imaging, outperforming baseline methods by <strong>15% in PSNR</strong>, <strong>10% in SSIM</strong>, with a <strong>75-fold speedup</strong>.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="patents-publications">
-    <h2>Patents & Publications</h2>
-
-    <div class="pub-card">
-      <div class="pub-title">Synchronized Context Management System for AI in IT Operations Management Applications</div>
-      <div class="pub-authors"><strong>Nakshatri, Hemanth S.</strong>, et al.</div>
-      <div class="pub-journal"><strong>U.S. Patent Pending (2025)</strong></div>
-      <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.35rem;">
-        Novel architecture for real-time synchronized context propagation across multi-agent AI networks and heterogeneous observability data domains in IT operations and service management.
+  <!-- About Section -->
+  <section id="about" class="section-wrap">
+    <div class="container">
+      <h2 class="section-title">About</h2>
+      <p class="section-desc">
+        A hybrid systems engineer combining production distributed platforms with peer-reviewed machine learning research.
       </p>
-    </div>
 
-    <div class="pub-card">
-      <div class="pub-title">
-        <a href="https://ieeexplore.ieee.org/abstract/document/10143260" target="_blank">
-          Complex Valued Long Short Term Memory Based Architecture for Frequency Domain Photoacoustic Imaging ↗
+      <div style="max-width: 68ch; font-size: 1.05rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 1.35rem;">
+        <p>
+          I am a <strong style="color: #ffffff;">Cloud Engineer II at Hewlett Packard Enterprise (HPE)</strong> in San Jose, California. My engineering focus is on autonomous multi-agent systems and high-throughput observability platforms capable of operating across petabyte-scale distributed telemetry.
+        </p>
+        <p>
+          At HPE, I am the lead contributor to the <strong style="color: #ffffff;">Agentic Observability Harness</strong>. The system orchestrates over 600 tools via the <strong style="color: var(--accent);">Model Context Protocol (MCP)</strong> without context saturation, enabling autonomous multi-hypothesis Root Cause Analysis (RCA) and cloud resource orchestration across hybrid cloud environments.
+        </p>
+        <p>
+          I hold a Master of Science in Electrical and Computer Engineering from the <strong style="color: #ffffff;">University of Wisconsin–Madison</strong> (Machine Learning and High-Performance Computing). Previously, I was a Project Associate at the <strong style="color: #ffffff;">Indian Institute of Science (IISc)</strong> under Prof. Jaya Prakash, authoring first-author publications in <em>IEEE Transactions on Computational Imaging</em> and <em>The Journal of the Acoustical Society of America</em>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section (Timeline Layout inspired by Stanford Ceeve) -->
+  <section id="experience" class="section-wrap">
+    <div class="container">
+      <h2 class="section-title">Work Experience</h2>
+      <p class="section-desc">
+        Production systems engineering and research track record.
+      </p>
+
+      <div class="timeline">
+
+        <!-- Role 1: Cloud Engineer II -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-header">
+            <div class="timeline-role">
+              Cloud Engineer II
+              <span class="promo-pill">Promoted Dec 2025</span>
+            </div>
+            <span class="timeline-date">Dec 2025 — Present</span>
+          </div>
+          <div class="timeline-org">Hewlett Packard Enterprise · San Jose, CA</div>
+
+          <ul class="timeline-list">
+            <li>
+              <strong>Enterprise Multi-Agent Harness:</strong> Architected multi-agent Generative AI system for automated Root Cause Analysis (RCA) on HPE's observability platform (OpsRamp), orchestrating specialized agents across alerts, traces, logs, metrics, and topology for enterprise tenants.
+            </li>
+            <li>
+              <strong>600+ Tool Orchestration Layer:</strong> Engineered dynamic tool selection and context-aware routing, preventing context-window bloat while maintaining comprehensive observability coverage—backed by an event-driven distributed streaming backbone using <strong>Kafka, Redis, Cassandra, and Elasticsearch</strong>.
+            </li>
+            <li>
+              <strong>MCP & Extensible Plugin Framework:</strong> Built an extensible Model Context Protocol (MCP) compatible architecture (Bring Your Own Skills, Rules, and Evidence), enabling tenants to integrate external telemetry sources, custom diagnostic policies, and third-party tools alongside native HPE telemetry.
+            </li>
+            <li>
+              <strong>Continuous Learning Engine:</strong> Built an adaptive memory layer that retains past investigation histories, learns from corrective human feedback, and refines triage accuracy across successive incident cycles.
+            </li>
+            <li>
+              <strong>Autonomous Platform Control:</strong> Developed agentic platform navigation and automated resource onboarding, converting multi-hour manual configuration workflows into minutes.
+            </li>
+            <li>
+              <strong>Quantified Operational Impact:</strong> Slashed false-positive escalations to on-call engineers by over <strong>80%</strong>, enabling L1 support to autonomously triage incidents and accelerating Mean Time to Diagnosis (MTTD) to under <strong>10 minutes</strong>.
+            </li>
+          </ul>
+
+          <div class="tags">
+            <span class="tag">Multi-Agent Systems</span>
+            <span class="tag">Model Context Protocol (MCP)</span>
+            <span class="tag">Agent-to-Agent (A2A)</span>
+            <span class="tag">Apache Kafka</span>
+            <span class="tag">Redis</span>
+            <span class="tag">Cassandra</span>
+            <span class="tag">Elasticsearch</span>
+            <span class="tag">AIOps</span>
+          </div>
+        </div>
+
+        <!-- Role 2: Software Engineer (Systems) -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-header">
+            <div class="timeline-role">Software Engineer (Systems)</div>
+            <span class="timeline-date">Feb 2025 — Dec 2025</span>
+          </div>
+          <div class="timeline-org">Hewlett Packard Enterprise · San Jose, CA</div>
+
+          <ul class="timeline-list">
+            <li>Prototyped and built the foundational multi-agent Generative AI architecture for automated RCA, correlating complex alerts, logs, and telemetry across large-scale infrastructure.</li>
+            <li>Engineered the RCA system as a reusable, standardized framework using MCP and Agent-to-Agent (A2A) protocols, adopted by multiple internal teams to accelerate AI agent development.</li>
+          </ul>
+
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Distributed Systems</span>
+            <span class="tag">Protocol Design</span>
+            <span class="tag">Observability</span>
+          </div>
+        </div>
+
+        <!-- Role 3: Intern -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-header">
+            <div class="timeline-role">Software Engineer Intern</div>
+            <span class="timeline-date">Jun 2024 — Aug 2024</span>
+          </div>
+          <div class="timeline-org">Hewlett Packard Enterprise · San Jose, CA</div>
+
+          <ul class="timeline-list">
+            <li>Built an end-to-end RAG virtual assistant utilizing dynamic context distillation inspired by Map-Reduce, enabling LLMs to accurately synthesize 100k+ word knowledge bases.</li>
+            <li>Designed a scalable architectural pipeline for time-series forecasting, capable of ingesting and modeling diverse univariate and multivariate incoming telemetry streams.</li>
+          </ul>
+
+          <div class="tags">
+            <span class="tag">RAG</span>
+            <span class="tag">Context Distillation</span>
+            <span class="tag">Time-Series</span>
+            <span class="tag">PyTorch</span>
+          </div>
+        </div>
+
+        <!-- Role 4: IISc -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-header">
+            <div class="timeline-role">Project Associate (Research)</div>
+            <span class="timeline-date">Aug 2021 — Jul 2023</span>
+          </div>
+          <div class="timeline-org">Indian Institute of Science (IISc) · Bangalore, India · Advised by Prof. Jaya Prakash</div>
+
+          <ul class="timeline-list">
+            <li>Formulated model resolution matrix-based deconvolution algorithms for computational medical imaging, boosting reconstruction quality in photoacoustic tomography by over <strong>20% in PSNR</strong> and <strong>30% in SSIM</strong>.</li>
+            <li>Developed a novel complex-valued LSTM neural network architecture for frequency-domain imaging, outperforming baseline methods by <strong>15% in PSNR</strong>, <strong>10% in SSIM</strong>, with a <strong>75-fold reconstruction acceleration</strong>.</li>
+          </ul>
+
+          <div class="tags">
+            <span class="tag">Deep Learning</span>
+            <span class="tag">Complex-Valued LSTM</span>
+            <span class="tag">Tomography</span>
+            <span class="tag">Signal Processing</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Patents & Publications Section -->
+  <section id="publications" class="section-wrap">
+    <div class="container">
+      <h2 class="section-title">Patents & Publications</h2>
+      <p class="section-desc">
+        Peer-reviewed journal publications and patent filings in distributed context and computational imaging.
+      </p>
+
+      <div class="pub-list">
+
+        <!-- Patent -->
+        <div class="pub-item">
+          <span class="pub-badge badge-patent">U.S. Patent Pending · 2025</span>
+          <h3 class="pub-heading">Synchronized Context Management System for AI in IT Operations Management Applications</h3>
+          <div class="pub-meta">
+            <strong>Nakshatri, Hemanth S.</strong>, et al. · <span class="pub-venue">United States Patent and Trademark Office</span>
+          </div>
+          <p class="pub-summary">
+            System and method for maintaining real-time synchronized context across multi-agent AI networks and heterogeneous observability data domains (alerts, traces, logs, metrics) in IT operations and service desk environments.
+          </p>
+        </div>
+
+        <!-- IEEE TCI -->
+        <div class="pub-item">
+          <span class="pub-badge badge-journal">IEEE Transactions on Computational Imaging (2023)</span>
+          <h3 class="pub-heading">
+            <a href="https://ieeexplore.ieee.org/abstract/document/10143260" target="_blank">
+              Complex Valued Long Short Term Memory Based Architecture for Frequency Domain Photoacoustic Imaging ↗
+            </a>
+          </h3>
+          <div class="pub-meta">
+            <strong>Nakshatri, Hemanth S.</strong>, Jaya Prakash · <span class="pub-venue">IEEE TCI</span>
+          </div>
+          <p class="pub-summary">
+            Designed a novel complex-valued recurrent neural network architecture addressing computational bottlenecks in frequency-domain photoacoustic imaging. Achieved a 75-fold speed acceleration in image reconstruction while outperforming baseline methods in PSNR and SSIM.
+          </p>
+          <a href="https://ieeexplore.ieee.org/abstract/document/10143260" class="pub-link-btn" target="_blank">
+            View Paper (IEEE Xplore)
+          </a>
+        </div>
+
+        <!-- JASA -->
+        <div class="pub-item">
+          <span class="pub-badge badge-journal">The Journal of the Acoustical Society of America (2022)</span>
+          <h3 class="pub-heading">
+            <a href="https://pubs.aip.org/asa/jasa/article-abstract/152/3/1345/2838702" target="_blank">
+              Model resolution matrix based deconvolution improves over non-quadratic penalization in frequency-domain photoacoustic tomography ↗
+            </a>
+          </h3>
+          <div class="pub-meta">
+            <strong>Nakshatri, Hemanth S.</strong>, Jaya Prakash · <span class="pub-venue">JASA</span>
+          </div>
+          <p class="pub-summary">
+            Investigated quantitative deconvolution algorithms based on model resolution matrices for frequency-domain photoacoustic tomography, achieving over 20% improvement in PSNR and 30% in SSIM compared to non-quadratic regularization schemes.
+          </p>
+          <a href="https://pubs.aip.org/asa/jasa/article-abstract/152/3/1345/2838702" class="pub-link-btn" target="_blank">
+            View Paper (JASA)
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section-wrap">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+      <p class="section-desc">
+        Technologies and tooling leveraged across distributed systems and machine learning.
+      </p>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Generative AI & Agents</h3>
+          <ul class="skill-items">
+            <li>Multi-Agent Systems</li>
+            <li>Model Context Protocol (MCP)</li>
+            <li>Agent-to-Agent (A2A)</li>
+            <li>RAG & Dynamic Distillation</li>
+            <li>LangChain & LangGraph</li>
+            <li>Google ADK</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3>Distributed & Cloud</h3>
+          <ul class="skill-items">
+            <li>Apache Kafka</li>
+            <li>Redis</li>
+            <li>Apache Cassandra</li>
+            <li>Elasticsearch</li>
+            <li>Docker & Kubernetes</li>
+            <li>Linux & Spark</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3>Machine Learning</h3>
+          <ul class="skill-items">
+            <li>PyTorch & CUDA</li>
+            <li>TensorFlow</li>
+            <li>Computer Vision</li>
+            <li>Signal Processing</li>
+            <li>Time-Series Forecasting</li>
+            <li>Scikit-Learn</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3>Languages</h3>
+          <ul class="skill-items">
+            <li>Python</li>
+            <li>Java</li>
+            <li>C & C++</li>
+            <li>SQL</li>
+            <li>Verilog</li>
+            <li>MATLAB</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section-wrap">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <p class="section-desc">
+        Academic background in machine learning, distributed computing, and computer systems.
+      </p>
+
+      <div class="edu-grid">
+        <div class="edu-item">
+          <h3>Master of Science</h3>
+          <div class="edu-inst">University of Wisconsin — Madison</div>
+          <div class="edu-date">Sep 2023 — Dec 2024 · Madison, WI</div>
+          <p>
+            <strong>ECE: Machine Learning & Signal Processing</strong><br>
+            Coursework: Machine Learning (760), Big Data Systems (544), High-Performance Computing (759), Computer Vision (766), Computer Architecture (552), Image Processing (533).
+          </p>
+        </div>
+
+        <div class="edu-item">
+          <h3>Bachelor of Engineering</h3>
+          <div class="edu-inst">Dayananda Sagar College of Engineering</div>
+          <div class="edu-date">Aug 2017 — May 2021 · Bangalore, India</div>
+          <p>
+            <strong>Electronics and Communication Engineering</strong><br>
+            Specialization in signal processing, communications, digital systems, and embedded computing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dedicated Permanent Resume Section -->
+  <section class="container">
+    <div id="resume-direct">
+      <h2 class="resume-direct-title">Looking for the complete resume?</h2>
+      <p class="resume-direct-desc">
+        The latest ATS-optimized 1-page resume is hosted directly on this domain. No third-party drive links or sign-in walls.
+      </p>
+      <div>
+        <a href="resume.pdf" class="btn btn-primary" target="_blank" download>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download Resume (PDF)
         </a>
       </div>
-      <div class="pub-authors"><strong>Nakshatri, Hemanth S.</strong>, Jaya Prakash</div>
-      <div class="pub-journal">IEEE Transactions on Computational Imaging (2023)</div>
-    </div>
-
-    <div class="pub-card">
-      <div class="pub-title">
-        <a href="https://pubs.aip.org/asa/jasa/article-abstract/152/3/1345/2838702" target="_blank">
-          Model resolution matrix based deconvolution improves over non-quadratic penalization in frequency-domain photoacoustic tomography ↗
-        </a>
-      </div>
-      <div class="pub-authors"><strong>Nakshatri, Hemanth S.</strong>, Jaya Prakash</div>
-      <div class="pub-journal">The Journal of the Acoustical Society of America (2022)</div>
-    </div>
-  </section>
-
-  <section id="education">
-    <h2>Education</h2>
-    <div class="item">
-      <div class="item-header">
-        <span class="item-title">University of Wisconsin — Madison</span>
-        <span class="item-date">Sep 2023 – Dec 2024</span>
-      </div>
-      <div class="item-subtitle">Master of Science in Electrical and Computer Engineering (Machine Learning & Signal Processing)</div>
-      <p style="font-size: 0.9rem; color: var(--text-muted);">
-        <strong>Coursework:</strong> Machine Learning (760), Big Data Systems (544), High-Performance Computing (759), Computer Vision (766), Computer Architecture (552), Image Processing (533).
+      <p class="resume-link-code">
+        Direct permanent URL: <code>https://hemanth-nakshatri.github.io/resume.pdf</code>
       </p>
     </div>
-
-    <div class="item">
-      <div class="item-header">
-        <span class="item-title">Dayananda Sagar College of Engineering</span>
-        <span class="item-date">Aug 2017 – May 2021</span>
-      </div>
-      <div class="item-subtitle">Bachelor of Engineering in Electronics and Communication Engineering</div>
-    </div>
   </section>
 
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <p style="margin-bottom: 0.5rem;"><strong>Programming:</strong> Python, Java, C, C++, Verilog, MATLAB, SQL</p>
-    <p style="margin-bottom: 0.5rem;"><strong>Generative AI & Agents:</strong> Multi-Agent Systems, Model Context Protocol (MCP), A2A, LangChain, LangGraph, Google ADK, RAG, Prompt Engineering</p>
-    <p style="margin-bottom: 0.5rem;"><strong>ML & Signal Processing:</strong> PyTorch, TensorFlow, Scikit-learn, CUDA, Computer Vision, Signal Processing, Time-Series Forecasting</p>
-    <p style="margin-bottom: 0.5rem;"><strong>Systems & Cloud:</strong> Kafka, Redis, Cassandra, Elasticsearch, Docker, Kubernetes, Spark, Spring, J2EE, Linux</p>
-  </section>
-
+  <!-- Footer -->
   <footer>
-    <p>© 2026 Hemanth Sridhar Nakshatri · Hosted with GitHub Pages</p>
+    <div class="container">
+      <div class="footer-socials">
+        <a href="https://github.com/hemanth-nakshatri" class="social-btn" target="_blank" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/hemanth-nakshatri" class="social-btn" target="_blank" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="mailto:hemans992@gmail.com" class="social-btn" aria-label="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+        </a>
+      </div>
+      <p class="footer-copy">
+        © 2026 Hemanth Sridhar Nakshatri · Deployed on GitHub Pages
+      </p>
+    </div>
   </footer>
+
+  <script>
+    // Mobile navigation toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (mobileToggle && navLinks) {
+      mobileToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+        });
+      });
+    }
+  </script>
 
 </body>
 </html>
